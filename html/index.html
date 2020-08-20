@@ -151,7 +151,7 @@
                 o.list.forEach(element => {
                     let root = document.getElementById("list"),
                         a1 = addDOM(root,"li",element,[["class","list-group-item text-break"]]),
-                        a2 = addDOM(a1,"a","download",[["href","/wt/"+element],["class","stretched-link float-right"]]);
+                        a2 = addDOM(a1,"a","download",[["href","/wt/"+element],["class","stretched-link float-right"],["download",""]]);
                 });
             }]);
         }
