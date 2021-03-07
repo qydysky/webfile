@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="Description" content="交换" />
     <title>交换</title>
-    <link rel="stylesheet" href="/wt/dropzone.min.css" />
-    <link rel="stylesheet" href="/wt/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ext/dropzone-5.7.0/dist/min/dropzone.min.css" />
+    <link rel="stylesheet" href="/ext/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
     <style>
         .dropzone {
             min-height: unset;
@@ -17,27 +17,28 @@
 </head>
 
 <body>
-    <div class="container vh-100">
+    <div class="container vh-100 py-1">
         <div class="row h-100">
             <div class="col-12 order-12 col-lg-9 order-lg-1 p-4 h-100">
                 <h2>file list</h2>
                 <ul class="list-group list-group-flush overflow-auto h-100" id="list">
-                    <li class="list-group-item">Cras justo odio
-                        <a href="#" class="stretched-link float-right">下载</a>
-                    </li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
                 </ul>
             </div>
             <div class="col-12 order-1 col-lg-3 order-lg-12 p-4">
+                <label for="idropzone">Upload</label>
                 <form action="/wt/api/upload" class="dropzone" id="idropzone">
+                </form>
+                <form id="ClipboardArea">
+                    <div class="form-group d-flex justify-content-between mt-3 mb-2">
+                        <label for="Clipboard">Clipboard</label>
+                        <button type="button" class="btn btn-primary btn-sm">Submit</button>
+                    </div>
+                    <textarea class="form-control" id="Clipboard" rows="3"></textarea>
                 </form>
             </div>
         </div>
     </div>
-    <script src="/wt/dropzone.min.js"></script>
+    <script src="/ext/dropzone-5.7.0/dist/min/dropzone.min.js"></script>
     <script>
         /**
          * @function xhr xhr请求
@@ -48,41 +49,41 @@
          */
 
         function xhr(url, async, callback, timeout) {
-        if (
-            typeof url != typeof "" ||
-            typeof async != typeof true ||
-            typeof callback != typeof []
-        ) {
-            console.error("type error");
-            return;
-        }
-        var xhr = new XMLHttpRequest();
-        if (async)
-            xhr.onreadystatechange = function () {
-            switch (xhr.readyState) {
-                case 0:
-                if (callback[0]) callback[0](xhr);
-                break;
-                case 1:
-                if (callback[1]) callback[1](xhr);
-                break;
-                case 2:
-                if (callback[2]) callback[2](xhr);
-                break;
-                case 3:
-                if (callback[3]) callback[3](xhr);
-                break;
-                case 4:
-                if (callback[4]) callback[4](xhr);
-                break;
-                default:
-                break;
+            if (
+                typeof url != typeof "" ||
+                typeof async !=typeof true ||
+                    typeof callback != typeof []
+            ) {
+                console.error("type error");
+                return;
             }
-            };
-        if (async && timeout) xhr.timeout = timeout;
-        xhr.open("GET", url, async && true);
-        xhr.send();
-        if (!async) callback[0](xhr);
+            var xhr = new XMLHttpRequest();
+            if (async)
+                xhr.onreadystatechange = function () {
+                    switch (xhr.readyState) {
+                        case 0:
+                            if (callback[0]) callback[0](xhr);
+                            break;
+                        case 1:
+                            if (callback[1]) callback[1](xhr);
+                            break;
+                        case 2:
+                            if (callback[2]) callback[2](xhr);
+                            break;
+                        case 3:
+                            if (callback[3]) callback[3](xhr);
+                            break;
+                        case 4:
+                            if (callback[4]) callback[4](xhr);
+                            break;
+                        default:
+                            break;
+                    }
+                };
+            if (async &&timeout) xhr.timeout = timeout;
+            xhr.open("GET", url, async &&true);
+            xhr.send();
+            if (!async) callback[0](xhr);
         }
         /**
          * @function addDOM 添加节点
@@ -97,18 +98,18 @@
             if (!El || !ElN) return;
             let d;
             if (El.nodeName == "svg" || ElN == "svg")
-            d = document.createElementNS("http://www.w3.org/2000/svg", ElN);
+                d = document.createElementNS("http://www.w3.org/2000/svg", ElN);
             else d = document.createElement(ElN);
 
             if (text) d.innerHTML = text;
             for (var i = 0; i < cla.length; i++) {
-            try {
-                d.setAttribute(cla[i][0], cla[i][1]);
-            } catch (e) {
-                console.error("addDom:error!!!!");
-                console.log(d);
-                console.log(e);
-            }
+                try {
+                    d.setAttribute(cla[i][0], cla[i][1]);
+                } catch (e) {
+                    console.error("addDom:error!!!!");
+                    console.log(d);
+                    console.log(e);
+                }
             }
             if (!firstdom) El.appendChild(d);
             else El.insertBefore(d, firstdom);
@@ -133,29 +134,68 @@
                 list()
             }, 100);
         });
-        
+
         function list() {
             document.getElementById("list").innerHTML = "";
-            xhr("/wt/api/list",true,[,,,,(e)=>{
+            xhr("/wt/api/list", true, [, , , , (e) => {
                 if (e.status != 200) {
                     let root = document.getElementById("list"),
-                        a1 = addDOM(root,"li","error!",[["class","list-group-item text-break"]]);
+                        a1 = addDOM(root, "li", "error!", [
+                            ["class", "list-group-item text-break"]
+                        ]);
                     return;
                 }
                 var o = JSON.parse(e.response);
-                if(o.list.length==0){
+                if (o.list.length == 0) {
                     let root = document.getElementById("list"),
-                        a1 = addDOM(root,"li","empty!",[["class","list-group-item text-break"]]);
+                        a1 = addDOM(root, "li", "empty!", [
+                            ["class", "list-group-item text-break"]
+                        ]);
                     return;
                 }
                 o.list.forEach(element => {
+                    if( element.indexOf("Clipboard.html") != -1){
+                        let root = document.getElementById("list"),
+                        a1 = addDOM(root, "li", "Clipboard", [
+                            ["class", "list-group-item text-break"]
+                        ],root.children[0]),
+                        a2 = addDOM(a1, "a", "view", [
+                            ["href", "/wt/" + element],
+                            ["class", "stretched-link float-right"]
+                        ]);
+                        return;
+                    }
+
                     let root = document.getElementById("list"),
-                        a1 = addDOM(root,"li",element,[["class","list-group-item text-break"]]),
-                        a2 = addDOM(a1,"a","download",[["href","/wt/"+element],["class","stretched-link float-right"],["download",""]]);
+                        a1 = addDOM(root, "li", element, [
+                            ["class", "list-group-item text-break"]
+                        ]),
+                        a2 = addDOM(a1, "a", "download", [
+                            ["href", "/wt/" + element],
+                            ["class", "stretched-link float-right"],
+                            ["download", ""]
+                        ]);
                 });
             }]);
         }
-        list()
+        list();
+
+
+        (()=>{
+            let A1 = document.getElementById("ClipboardArea"),
+                A2 = A1.getElementsByTagName("button")[0],
+                A3 = A1.getElementsByTagName("textarea")[0];
+            window.addEventListener("load",()=>{
+                A2.addEventListener("click",()=>{
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "/wt/api/copy", true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        c: A3.value
+                    }));
+                });
+            });
+        })()
     </script>
 </body>
 
