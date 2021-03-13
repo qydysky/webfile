@@ -14,3 +14,5 @@ require (
 	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110 // indirect
 	golang.org/x/sys v0.0.0-20210305230114-8fe3ee5dd75b // indirect
 )
+
+//replace github.com/qydysky/other/wt => ../other/wt

@@ -192,7 +192,7 @@
                         headers: {
                             'content-type': 'application/json'
                         },
-                        body: JSON.stringify({c: A3.value}),
+                        body: JSON.stringify({c: encodeURIComponent(A3.value)}),
                     }).then(()=>{
                         list();
                     })
