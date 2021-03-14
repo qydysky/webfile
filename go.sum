@@ -62,6 +62,10 @@ github.com/qydysky/other v0.0.0-20210313143025-44bfde59fa25 h1:wjgmvSRpxYtozXEb/
 github.com/qydysky/other v0.0.0-20210313143025-44bfde59fa25/go.mod h1:B5SBanoHWz+HlPZu4Ua/iDtcHP03iAAa/T+hNgJ7bp0=
 github.com/qydysky/other v0.0.0-20210313144622-48426115c624 h1:5s2D1Y8BDLFHRvyKhT7RtKysCR6JQRu9b4DL7FCMI5c=
 github.com/qydysky/other v0.0.0-20210313144622-48426115c624/go.mod h1:50ofX6IboJabNmvoWwCJ76K4kfXf0Qj1ezl7+s81rWk=
+github.com/qydysky/other v0.0.0-20210314020107-e5010a62c743 h1:f4tjLGwO2KRVhET9tXHewbq0ybPz7mjtVT2PIV4ei4c=
+github.com/qydysky/other v0.0.0-20210314020107-e5010a62c743/go.mod h1:50ofX6IboJabNmvoWwCJ76K4kfXf0Qj1ezl7+s81rWk=
+github.com/qydysky/other v0.0.1 h1:dhH3cG47TXvcPFzqnKkA43kho4JuXD7dag51uqOKKNA=
+github.com/qydysky/other v0.0.1/go.mod h1:50ofX6IboJabNmvoWwCJ76K4kfXf0Qj1ezl7+s81rWk=
 github.com/qydysky/other/proxylist v0.0.0-20200903233854-c76415e9f780 h1:jjFr7p4n63DQ8gwBmC3UkrBRtoXJDMDPz5hmzhCzung=
 github.com/qydysky/other/proxylist v0.0.0-20200903233854-c76415e9f780/go.mod h1:TI4nFkilg9hA4b4M+vgywZGt/vAbRqEeBO9LLopvJig=
 github.com/qydysky/other/proxylist v0.0.0-20210313143025-44bfde59fa25 h1:Ie+ti292SYK0KDtYFBAoISlTlfLeI86N89ml88EIaHE=
@@ -76,6 +80,10 @@ github.com/qydysky/other/wt v0.0.0-20210123072321-5f113da6e57f h1:XnPKnUBbsVngTX
 github.com/qydysky/other/wt v0.0.0-20210123072321-5f113da6e57f/go.mod h1:DDUsA+PyBzvAHN/D4Su/JZgSysMnwqHRuJdQsKxafMg=
 github.com/qydysky/other/wt v0.0.0-20210313143025-44bfde59fa25 h1:aG5GQd72zvJCGcMLaz1FUQsdYnAa+gH4dEbRc/Qp3pk=
 github.com/qydysky/other/wt v0.0.0-20210313143025-44bfde59fa25/go.mod h1:DDUsA+PyBzvAHN/D4Su/JZgSysMnwqHRuJdQsKxafMg=
+github.com/qydysky/other/wt v0.0.0-20210313144622-48426115c624 h1:r6VPFoB4X0TIkl1jHOJLBbsUFbyJmb8wSde6/iYp6T0=
+github.com/qydysky/other/wt v0.0.0-20210313144622-48426115c624/go.mod h1:DDUsA+PyBzvAHN/D4Su/JZgSysMnwqHRuJdQsKxafMg=
+github.com/qydysky/other/wt v0.0.0-20210314020107-e5010a62c743 h1:27PXBb8e25jjvTEaP0HfYgjBuuQAQsQBnZjegYsSyYA=
+github.com/qydysky/other/wt v0.0.0-20210314020107-e5010a62c743/go.mod h1:DDUsA+PyBzvAHN/D4Su/JZgSysMnwqHRuJdQsKxafMg=
 github.com/qydysky/part v0.0.0-20200816080039-0e0b3a4b1748 h1:I8SRkWmD61P5a1kXrk8BeY6bXOPx8I0n5qqC5tDs9Rc=
 github.com/qydysky/part v0.0.0-20200816080039-0e0b3a4b1748/go.mod h1:+8N3UgJBVyJj8ar31eZtucwrKpLpay854Y5qq0xk3x0=
 github.com/qydysky/part v0.0.0-20200820064554-6e54580b1fc5 h1:oSnslUU2UFYGscmkNOlTxNSGp5j8TEdInzSqBst/YSA=
@@ -162,6 +170,8 @@ golang.org/x/sys v0.0.0-20210305230114-8fe3ee5dd75b h1:ggRgirZABFolTmi3sn6Ivd9Si
 golang.org/x/sys v0.0.0-20210305230114-8fe3ee5dd75b/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210313110737-8e9fff1a3a18 h1:jxr7/dEo+rR29uEBoLSWJ1tRHCFAMwFbGUU9nRqzpds=
 golang.org/x/sys v0.0.0-20210313110737-8e9fff1a3a18/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20210313202042-bd2e13477e9c h1:coiPEfMv+ThsjULRDygLrJVlNE1gDdL2g65s0LhV2os=
+golang.org/x/sys v0.0.0-20210313202042-bd2e13477e9c/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/term v0.0.0-20201117132131-f5c789dd3221/go.mod h1:Nr5EML6q2oocZ2LXRh80K7BxOlk5/8JxuGnuhpl+muw=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
